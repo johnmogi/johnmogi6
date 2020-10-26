@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "work_cats",
+  "info": {
+    "name": "workCat"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "works": {
+      "collection": "work",
+      "via": "work_cats",
+      "dominant": true
+    },
+    "workCatName": {
+      "type": "string"
+    },
+    "workCatImage": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "workCatDescription": {
+      "type": "richtext"
+    }
+  }
+}
